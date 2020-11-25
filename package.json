@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/drawwithcode/2020-05-shmanfredi/issues"
   },
-  "homepage": "https://github.com/drawwithcode/2020-05-shmanfredi#readme"
+  "homepage": "https://github.com/drawwithcode/2020-05-shmanfredi#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
