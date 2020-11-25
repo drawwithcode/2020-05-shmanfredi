@@ -14,36 +14,30 @@ function newConnection() {
 
 function setup() {
 
-	createCanvas(1920, 1080);
+	createCanvas(1920, 1080); // I preferred fixed dimension since windowResized() this time was giving some problems
 	background("gainsboro");
 
   fill("white");
   stroke("slategray");
   rect(width/48,height/4, width/5.8, 2*height/4, 20);
 
-  fill("slategray");
-  textFont("Comfortaa");
-  textAlign(CENTER);
-  textSize(20);
-  text('FREE YOUR CREATIVITY!\n\nDraw in the box on the right\nwith your friends!\n\nPress S to save your drawing', 5.2 * width / 48, height/3);
+	let txtInst = "FREE YOUR CREATIVITY!\n\nDraw in the box on the right\nwith your friends!\n\nPress S to save your drawing\nPress 0 for fullscreen"
+	let txtColPick = "Color"
+	let txtBruSize = "Brush size"
 
   fill("slategray");
-  textFont("Comfortaa");
+  textFont("Comfortaa"); // Something is wrong. It loads the font only if you refresh the page.
   textAlign(CENTER);
   textSize(20);
-  text('Color', 5.2 * width / 48, height/1.8);
+  text(txtInst, 5.2 * width / 48, height/3);
+	text(txtColPick, 5.2 * width / 48, height/1.8);
+	text(txtBruSize, 5.2 * width / 48, height/1.5);
 
-  colorPicker = createColorPicker("#000000");
+  colorPicker = createColorPicker("#000000"); //created color picker and set value to black
   colorPicker.style("width", "170px");
   colorPicker.position(width/16, height/1.7);
 
-  fill("slategray");
-  textFont("Comfortaa");
-  textAlign(CENTER);
-  textSize(20);
-  text('Brush size', 5.2 * width / 48, height/1.5);
-
-  slider = createSlider(1, 100, 10);
+  slider = createSlider(1, 100, 10); //slider for brush size
 	slider.style("width", "170px");
   slider.position(width/16, height/1.45);
 
@@ -58,14 +52,18 @@ function draw() {
   myColor = colorPicker.value();
 }
 
+//inputs from keyboard
 function keyPressed(){
   if(key == "s"){
   save("collab_drawing.png");
-  }
+} else if(key =="0"){
+	let fs = fullscreen();
+    fullscreen(!fs);
+}
 }
 
 function mouseDragged() {
-	if (mouseX > 13 * width/48 && mouseX < 10.5*width/12 && mouseY > height/8 && mouseY < 3.5*height/4) {
+	if (mouseX > 13 * width/48 && mouseX < 10.5*width/12 && mouseY > height/8 && mouseY < 3.5*height/4) { //setting the drawing field
 		push();
 		fill(myColor);
     stroke(myColor);
