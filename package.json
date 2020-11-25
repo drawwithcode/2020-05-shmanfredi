@@ -1,0 +1,20 @@
+{
+  "name": "2020-05-shmanfredi",
+  "version": "1.0.0",
+  "description": "a simple node project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drawwithcode/2020-05-shmanfredi.git"
+  },
+  "author": "sharon manfredi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drawwithcode/2020-05-shmanfredi/issues"
+  },
+  "homepage": "https://github.com/drawwithcode/2020-05-shmanfredi#readme"
+}
