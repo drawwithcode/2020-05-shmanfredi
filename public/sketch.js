@@ -6,12 +6,7 @@ let colorPicker2;
 
 socket.on("connect", newConnection);
 socket.on("mouseBroadcast", otherMouse);
-socket.on("color", setColor);
 
-
-function setColor(assignedColor) {
-	myColor = assignedColor;
-}
 
 function newConnection() {
 	console.log("your id: " + socket.id);
@@ -38,7 +33,7 @@ function setup() {
   textSize(20);
   text('Color', 5.2 * width / 48, height/1.8);
 
-  colorPicker = createColorPicker("myColor");
+  colorPicker = createColorPicker("#000000");
   colorPicker.style("width", "170px");
   colorPicker.position(width/16, height/1.7);
 
