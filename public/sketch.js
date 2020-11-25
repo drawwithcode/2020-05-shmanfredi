@@ -1,4 +1,4 @@
-let socket = io();
+//let socket = io();
 let myColor;
 let slider;
 let colorPicker;
@@ -17,22 +17,6 @@ function setup() {
 	createCanvas(1920, 1080); // I preferred fixed dimension since windowResized() this time was giving some problems
 	background("gainsboro");
 
-  fill("white");
-  stroke("slategray");
-  rect(width/48,height/4, width/5.8, 2*height/4, 20);
-
-	let txtInst = "FREE YOUR CREATIVITY!\n\nDraw in the box on the right\nwith your friends!\n\nPress S to save your drawing\nPress 0 for fullscreen"
-	let txtColPick = "Color"
-	let txtBruSize = "Brush size"
-
-  fill("slategray");
-  textFont("Comfortaa"); // Something is wrong. It loads the font only if you refresh the page.
-  textAlign(CENTER);
-  textSize(20);
-  text(txtInst, 5.2 * width / 48, height/3);
-	text(txtColPick, 5.2 * width / 48, height/1.8);
-	text(txtBruSize, 5.2 * width / 48, height/1.5);
-
   colorPicker = createColorPicker("#000000"); //created color picker and set value to black
   colorPicker.style("width", "170px");
   colorPicker.position(width/16, height/1.7);
@@ -50,6 +34,22 @@ function setup() {
 function draw() {
 	myWeight = slider.value();
   myColor = colorPicker.value();
+
+	fill("white");
+	stroke("slategray");
+	rect(width/48,height/4, width/5.8, 2*height/4, 20);
+
+	let txtInst = "FREE YOUR CREATIVITY!\n\nDraw in the box on the right\nwith your friends!\n\nPress S to save your drawing\nPress 0 for fullscreen"
+	let txtColPick = "Color"
+	let txtBruSize = "Brush size"
+
+	fill("slategray");
+	textFont("Comfortaa"); // Something is wrong. It loads the font only if you refresh the page.
+	textAlign(CENTER);
+	textSize(20);
+	text(txtInst, 5.2 * width / 48, height/3);
+	text(txtColPick, 5.2 * width / 48, height/1.8);
+	text(txtBruSize, 5.2 * width / 48, height/1.5);
 }
 
 //inputs from keyboard
