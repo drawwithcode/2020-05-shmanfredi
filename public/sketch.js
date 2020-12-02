@@ -1,6 +1,6 @@
 let socket = io();
 
-let myColor = "black";
+let myColor = "#000000";
 let slider;
 let colorPicker;
 
