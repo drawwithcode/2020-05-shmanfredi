@@ -1,14 +1,5 @@
 let socket = io();
 
-////////////////////////////////////////////////////////////////////////////////
-
-socket.on("connect", newConnection);
-socket.on("mouseBroadcast", otherMouse);
-socket.on("color", setColor);
-socket.on("newPlayer", newPlayer);
-
-////////////////////////////////////////////////////////////////////////////////
-
 let myColor = "#000000";
 let slider;
 let colorPicker;
@@ -19,6 +10,13 @@ let newUser;
 let txtInst;
 let txtColPick;
 let txtBruSize;
+
+////////////////////////////////////////////////////////////////////////////////
+
+socket.on("connect", newConnection);
+socket.on("mouseBroadcast", otherMouse);
+socket.on("color", setColor);
+socket.on("newPlayer", newPlayer);
 
 ////////////////////////////////////////////////////////////////////////////////
 
